@@ -56,7 +56,7 @@ class Ui_MainWindow(object):
                     for i in range(len(div_text)):
                         input_path= input_path_dir+"/"+list_files[i]
                         output_path= output_path_dir+"/"+(list_files[i].replace(".jpg",".jpg"))
-                        Steganography.encode(input_path,output_path, div_text[i], password)
+                        stego.Steganography.encode(input_path, output_path, div_text[i], password)
                         self.progressBar.setValue(100 / pb)
                         #loss = stego.encode(input_path,div_text[i],output_path,password, self.progressBar.setValue(100/pb))
                         pb=pb-1
