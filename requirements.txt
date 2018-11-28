@@ -1,0 +1,16 @@
+altgraph==0.16.1
+asn1crypto==0.24.0
+cffi==1.11.5
+cryptography==2.4.1
+future==0.17.1
+idna==2.7
+macholib==1.11
+numpy==1.15.4
+opencv-contrib-python==3.4.3.18
+opencv-python==3.4.3.18
+pefile==2018.8.8
+pycparser==2.19
+PyInstaller==3.4
+PyQt5==5.11.3
+PyQt5-sip==4.19.13
+six==1.11.0

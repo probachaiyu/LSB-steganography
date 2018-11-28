@@ -3,7 +3,8 @@ import itertools
 from PyQt5 import QtCore, QtGui, QtWidgets
 import lsb_steganography as stego
 import os
-import math
+
+
 
 class Ui_MainWindow(object):
 
@@ -54,8 +55,10 @@ class Ui_MainWindow(object):
                     pb=len(div_text)
                     for i in range(len(div_text)):
                         input_path= input_path_dir+"/"+list_files[i]
-                        output_path= output_path_dir+"/"+(list_files[i].replace(".jpg",".png"))
-                        loss = stego.encode(input_path,div_text[i],output_path,password, self.progressBar.setValue(100/pb))
+                        output_path= output_path_dir+"/"+(list_files[i].replace(".jpg",".jpg"))
+                        Steganography.encode(input_path,output_path, div_text[i], password)
+                        self.progressBar.setValue(100 / pb)
+                        #loss = stego.encode(input_path,div_text[i],output_path,password, self.progressBar.setValue(100/pb))
                         pb=pb-1
                 except stego.FileError as fe:
                     self.displayMsg('File Error',str(fe),'err')
@@ -92,7 +95,9 @@ class Ui_MainWindow(object):
                 rb=len(list_files)
                 for i in range(len(list_files)):
                     input_path= input_path_dir+"/"+list_files[i]
-                    data = stego.decode(input_path,password,self.progressBar_2.setValue(100/rb))
+                    data = stego.Steganography.decode(input_path, password)
+                    self.progressBar_2.setValue(100 / rb)
+                    #data = stego.decode(input_path,password,self.progressBar_2.setValue(100/rb))
                     result.append(list(data))
                     rb=rb-1
                 text = ''.join(self.dechunk(result))

@@ -102,3 +102,17 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#other
+/dist
+/build
+/photo
+/output_photo
+.dist
+.build
+.photo
+.output_photo
+dist/
+build/
+photo/
+output_photo/
